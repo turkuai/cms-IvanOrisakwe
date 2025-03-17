@@ -1,0 +1,113 @@
+body {
+    font-family: Arial, sans-serif;
+    margin-top: 5px;
+    padding: 0;
+    line-height: 1.6;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+nav {
+    border: 1px solid #000;
+    padding: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    border: 1px solid #000;
+    padding: 10px 20px;
+    margin-right: 30px;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: blue;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+main {
+    border: 1px solid #000;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+article {
+    border: 1px solid #000;
+    padding: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.article-content {
+    flex: 1;
+    padding-right: 20px;
+}
+
+article img {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+footer {
+    border: 1px solid #000;
+    padding: 15px;
+    display: flex;
+}
+
+.footer-company {
+    width: 30%;
+}
+
+.footer-links {
+    display: flex;
+    gap: 50px;
+    flex-grow: 1;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    margin: 0 30px;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.footer-section a {
+    color: blue;
+    text-decoration: none;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}
+
+.copyright {
+    margin-top: 15px;
+    font-size: 0.8em;
+}
