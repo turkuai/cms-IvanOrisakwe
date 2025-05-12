@@ -40,7 +40,6 @@ body {
     object-fit: cover; /* Ensures the image fits nicely within the dimensions */
     border-radius: 8px; /* Adds rounded corners for a softer look */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
-    border: 1px solid #f00; /* Re-added red border for debugging */
 }
 .footer {
     display: flex;
