@@ -1,55 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin - Edit Website Content</title>
-    <link rel="stylesheet" href="wireframe.css">
-</head>
-<body>
+    <link rel="stylesheet" href="wireframe.css" />
+  </head>
+  <body>
     <div class="header">
-        <img id="logo" src="https://taito.edu.turku.fi/pluginfile.php/1/theme_mb2nl/logo/1729438228/tai_logo_300x150.png" alt="IAI Logo" class="editable-field">
-        <div class="nav">
-            <a href="index.html">Home</a>
-            <a href="#">About</a>
-            <a href="#">Blog</a>
-        </div>
+      <img
+        id="logo"
+        src="https://taito.edu.turku.fi/pluginfile.php/1/theme_mb2nl/logo/1729438228/tai_logo_300x150.png"
+        alt="IAI Logo"
+        class="editable-field"
+      />
+      <div class="nav">
+        <a href="index.html">Home</a>
+        <a href="#">About</a>
+        <a href="#">Blog</a>
+      </div>
     </div>
-    <div class="content">
-        <div class="article">
-            <h2>Edit Logo</h2>
-            <button onclick="saveLogo()">Edit Logo</button>
-            <button onclick="addLogo()">Add Logo</button>
-            <button onclick="deleteLogo()">Delete Logo</button>
-        </div>
-        <div class="article">
-            <h2>Edit Footer Note</h2>
-            <p id="footer-note">© 2024, Company's name. All rights reserved.</p>
-            <button onclick="saveFooterNote()">Edit Footer Note</button>
-            <button onclick="addFooterNote()">Add Footer Note</button>
-            <button onclick="deleteFooterNote()">Delete Footer Note</button>
-        </div>
-        <div class="article">
-            <h2>Edit Social Media Links</h2>
-            <div class="social-links" id="social-links"></div>
-        </div>
-        <div class="article">
-            <h2>Edit Articles</h2>
-            <div class="content" id="articles-container"></div>
-        </div>
-    </div>
+    <div class="content"></div>
     <div class="footer">
-        <div>Your company's name</div>
-        <div>
-            <a href="index.html">Home</a>
-            <a href="#">About</a>
-            <a href="#">Blog</a>
-        </div>
-        <div class="social-links" id="social-links"></div>
-        <div id="footer-note">© 2024, Company's name. All rights reserved.</div>
-        <button onclick="resetAll()">Reset All</button>
+      <div>Your company's name</div>
+      <div>
+        <a href="index.html">Home</a>
+        <a href="#">About</a>
+        <a href="#">Blog</a>
+      </div>
+      <div class="social-links" id="social-links"></div>
+      <div id="footer-note"></div>
+      <button onclick="resetAll()">Reset All</button>
     </div>
 
+    <script src="index.js"></script>
     <script src="admin.js"></script>
-</body>
+  </body>
 </html>
