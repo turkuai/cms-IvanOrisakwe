@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="header">
-        <img id="logo" src="https://taito.edu.turku.fi/pluginfile.php/1/theme_mb2nl/logo/1729438228/tai_logo_300x150.png" alt="IAI Logo" class="editable-field" onclick="saveLogo()">
+        <img id="logo" src="https://taito.edu.turku.fi/pluginfile.php/1/theme_mb2nl/logo/1729438228/tai_logo_300x150.png" alt="IAI Logo" class="editable-field">
         <div class="nav">
             <a href="index.html">Home</a>
             <a href="#">About</a>
@@ -18,18 +18,24 @@
     <div class="content">
         <div class="article">
             <h2>Edit Logo</h2>
-            <p class="editable-field" onclick="saveFooterNote()">Click to edit footer note (current: <span id="footer-note">© 2024, Company's name. All rights reserved.</span>)</p>
+            <button onclick="saveLogo()">Edit Logo</button>
+            <button onclick="addLogo()">Add Logo</button>
+            <button onclick="deleteLogo()">Delete Logo</button>
+        </div>
+        <div class="article">
+            <h2>Edit Footer Note</h2>
+            <p id="footer-note">© 2024, Company's name. All rights reserved.</p>
+            <button onclick="saveFooterNote()">Edit Footer Note</button>
+            <button onclick="addFooterNote()">Add Footer Note</button>
+            <button onclick="deleteFooterNote()">Delete Footer Note</button>
         </div>
         <div class="article">
             <h2>Edit Social Media Links</h2>
-            <p>Click below to add a new social link:</p>
-            <button onclick="addSocialLink()">Add Social Link</button>
             <div class="social-links" id="social-links"></div>
         </div>
         <div class="article">
             <h2>Edit Articles</h2>
-            <p>Click an article element to edit, or add a new one:</p>
-            <button onclick="addArticle()">Add New Article</button>
+            <div class="content" id="articles-container"></div>
         </div>
     </div>
     <div class="footer">
@@ -41,6 +47,7 @@
         </div>
         <div class="social-links" id="social-links"></div>
         <div id="footer-note">© 2024, Company's name. All rights reserved.</div>
+        <button onclick="resetAll()">Reset All</button>
     </div>
 
     <script src="admin.js"></script>
