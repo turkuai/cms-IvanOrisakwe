@@ -1,65 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IAI Website Admin</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Edit Website Content</title>
     <link rel="stylesheet" href="wireframe.css">
-  </head>
-  <body>
-    <div class="header">
-      <h1>Website Admin Panel</h1>
-      <div class="nav">
-        <a href="index.html">Back to Site</a>
-      </div>
-    </div>
-    
-    <div class="admin-content">
-      <div class="admin-section">
-        <h2>Logo Settings</h2>
+</head>
+<body class="admin-body">
+    <h1>Admin - Edit Website Content</h1>
+
+    <div class="section">
+        <h2>Edit Logo</h2>
         <label for="logo-url">Logo URL:</label>
-        <input type="text" id="logo-url" class="admin-input">
-        <button onclick="saveLogo()">Update Logo</button>
-      </div>
-      
-      <div class="admin-section">
-        <h2>Footer Settings</h2>
-        <label for="company-name-input">Company Name:</label>
-        <input type="text" id="company-name-input" class="admin-input">
-        
-        <label for="footer-note-input">Footer Note:</label>
-        <input type="text" id="footer-note-input" class="admin-input">
-        <button onclick="saveFooter()">Update Footer</button>
-      </div>
-      
-      <div class="admin-section">
-        <h2>Social Links</h2>
-        <div id="social-links-editor"></div>
-        
-        <div class="add-social">
-          <h3>Add New Social Link</h3>
-          <label for="social-text">Link Text:</label>
-          <input type="text" id="social-text" class="admin-input">
-          
-          <label for="social-url">Link URL:</label>
-          <input type="text" id="social-url" class="admin-input">
-          
-          <button onclick="addSocialLink()">Add Link</button>
-        </div>
-      </div>
-      
-      <div class="admin-section">
-        <h2>Articles</h2>
-        <div id="articles-editor"></div>
-        
-        <div class="add-article">
-          <h3>Add New Article</h3>
-          <button onclick="addNewArticle()">Add New Article</button>
-        </div>
-      </div>
+        <input type="url" id="logo-url" placeholder="Enter logo URL">
+        <button onclick="saveLogo()">Save Logo</button>
     </div>
 
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script src="script.js"></script>
-  </body>
+    <div class="section">
+        <h2>Edit Footer Note</h2>
+        <label for="footer-note">Footer Note:</label>
+        <input type="text" id="footer-note" placeholder="Enter footer note">
+        <button onclick="saveFooterNote()">Save Footer Note</button>
+    </div>
+
+    <div class="section">
+        <h2>Edit Social Media Links</h2>
+        <div id="social-links-list"></div>
+        <h3>Add/Edit Social Link</h3>
+        <label for="social-text">Display Text:</label>
+        <input type="text" id="social-text" placeholder="Enter display text">
+        <label for="social-url">URL:</label>
+        <input type="url" id="social-url" placeholder="Enter URL">
+        <input type="hidden" id="edit-index" value="">
+        <button onclick="addOrUpdateSocialLink()">Add/Update Link</button>
+    </div>
+
+    <div>
+        <a href="index.html"><button>Back to Home</button></a>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
 </html>
