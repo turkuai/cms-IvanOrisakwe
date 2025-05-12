@@ -21,19 +21,17 @@ let socialLinks = JSON.parse(localStorage.getItem("socialLinks")) || [
   { text: "GitHub", url: "#" },
 ];
 
-window.onload = function () {
-  const logo =
-    localStorage.getItem("logo") ||
-    "https://taito.edu.turku.fi/pluginfile.php/1/theme_mb2nl/logo/1729438228/tai_logo_300x150.png";
-  document.getElementById("logo").src = logo;
-  const footerNote =
-    localStorage.getItem("footerNote") ||
-    "© 2024, Company's name. All rights reserved.";
-  document.getElementById("footer-note").textContent = footerNote;
+const logo =
+  localStorage.getItem("logo") ||
+  "https://taito.edu.turku.fi/pluginfile.php/1/theme_mb2nl/logo/1729438228/tai_logo_300x150.png";
+document.getElementById("logo").src = logo;
+const footerNote =
+  localStorage.getItem("footerNote") ||
+  "© 2024, Company's name. All rights reserved.";
+document.getElementById("footer-note").textContent = footerNote;
 
-  renderSocialLinks();
-  renderArticles();
-};
+renderSocialLinks();
+renderArticles();
 
 function renderSocialLinks() {
   const socialLinksContainer = document.getElementById("social-links");

@@ -1,29 +1,16 @@
-window.onload = function () {
-  const logo =
-    localStorage.getItem("logo") ||
-    "https://taito.edu.turku.fi/pluginfile.php/1/theme_mb2nl/logo/1729438228/tai_logo_300x150.png";
-  document.getElementById("logo").src = logo;
-  const footerNote =
-    localStorage.getItem("footerNote") ||
-    "© 2024, Company's name. All rights reserved.";
-  document.getElementById("footer-note").textContent = footerNote;
-
-  renderAdminSocialLinks();
-  renderAdminArticles();
-};
+renderAdminSocialLinks();
+renderAdminArticles();
 
 function renderAdminSocialLinks() {
   const socialLinksContainer = document.getElementById("social-links");
-  socialLinksContainer.innerHTML = "";
-  socialLinks.forEach((link, index) => {
-    const div = document.createElement("div");
-    div.className = "social-link-item";
-    div.innerHTML = `
-            <a href="${link.url}">${link.text}</a>
+
+  const items = document.getElementsByClassName('social-link-item')
+
+  Array.from(items).forEach((div, index) => {
+    div.innerHTML += `
             <button onclick="editSocialLink(${index})">Edit</button>
             <button onclick="deleteSocialLink(${index})">Delete</button>
         `;
-    socialLinksContainer.appendChild(div);
   });
   const addLinkBtn = document.createElement("button");
   addLinkBtn.textContent = "Add Social Link";
@@ -33,17 +20,17 @@ function renderAdminSocialLinks() {
 
 function renderAdminArticles() {
   const contentDiv = document.querySelector(".content");
-  contentDiv.innerHTML = "";
-  articles.forEach((article, index) => {
-    const articleDiv = document.createElement("div");
-    articleDiv.className = "article";
+
+  const items = document.getElementsByClassName('article')
+
+  Array.from(items).forEach((articleDiv, index) => {
+    const article = articles[index]
     articleDiv.innerHTML = `
             <h2 class="editable-field" onclick="editArticle(${index}, 'title')">${article.title}</h2>
             <p class="editable-field" onclick="editArticle(${index}, 'content')">${article.content}</p>
             <img src="${article.image}" alt="Article Image" class="editable-field" onclick="editArticle(${index}, 'image')">
             <button class="edit-btn" onclick="deleteArticle(${index})">Delete Article</button>
         `;
-    contentDiv.appendChild(articleDiv);
   });
   const addArticleBtn = document.createElement("button");
   addArticleBtn.textContent = "Add Article";
