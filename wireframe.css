@@ -1,10 +1,12 @@
 /* wireframe.css */
 
-/* Styles for index.html */
+/* Shared Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f0f2f5;
+    color: #333;
 }
 
 .header {
@@ -12,8 +14,9 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #f8f8f8;
-    border-bottom: 1px solid #ddd;
+    background-color: #fff;
+    border-bottom: 2px solid #007bff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .header img {
@@ -27,22 +30,33 @@ body {
 
 .nav a {
     text-decoration: none;
-    color: #000;
+    color: #007bff;
     font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: #0056b3;
 }
 
 .content {
     padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .article {
     margin-bottom: 20px;
+    padding: 15px;
+    background-color: #fff;
     border: 1px solid #ddd;
-    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .article h2 {
     margin-top: 0;
+    color: #007bff;
 }
 
 .article img {
@@ -50,15 +64,17 @@ body {
     height: 100px;
     object-fit: cover;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
 }
 
 .footer {
     display: flex;
     justify-content: space-between;
     padding: 20px;
-    background-color: #f8f8f8;
-    border-top: 1px solid #ddd;
+    background-color: #fff;
+    border-top: 2px solid #007bff;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -66,8 +82,13 @@ body {
 
 .footer a {
     text-decoration: none;
-    color: #000;
+    color: #007bff;
     margin-right: 10px;
+    transition: color 0.3s;
+}
+
+.footer a:hover {
+    color: #0056b3;
 }
 
 .social-links {
@@ -75,33 +96,48 @@ body {
     gap: 10px;
 }
 
-/* Styles for admin.html */
-.admin-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-    background-color: #f8f8f8;
+/* Admin-Specific Styles */
+.admin-body .article {
+    position: relative;
 }
 
-.admin-body h1 {
-    text-align: center;
+.edit-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.section {
-    margin-bottom: 20px;
-    padding: 15px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+.edit-btn:hover {
+    background-color: #218838;
 }
 
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+.editable-field {
+    border: 1px dashed #007bff;
+    padding: 5px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
-input[type="text"], input[type="url"] {
+.editable-field:hover {
+    background-color: #e9ecef;
+}
+
+.edit-form {
+    margin-top: 10px;
+    display: none;
+}
+
+.edit-form input,
+.edit-form textarea,
+.edit-form select {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
@@ -109,16 +145,17 @@ input[type="text"], input[type="url"] {
     border-radius: 4px;
 }
 
-button {
+.edit-form button {
     padding: 8px 15px;
     background-color: #007bff;
     color: #fff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-button:hover {
+.edit-form button:hover {
     background-color: #0056b3;
 }
 
@@ -131,6 +168,12 @@ button:hover {
 
 .social-link-item button {
     background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .social-link-item button:hover {
