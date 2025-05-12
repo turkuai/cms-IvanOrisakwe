@@ -1,34 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin - Edit Content</title>
-  <link rel="stylesheet" href="wireframe.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Edit Content</title>
+    <link rel="stylesheet" href="wireframe.css">
 </head>
 <body>
-  <h1>Admin - Edit Website Content</h1>
-  <a href="/index.html">Back to Home</a>
+    <h1>Admin - Edit Website Content</h1>
+    <a href="/index.html">Back to Home</a>
 
-  <h2>Edit Logo</h2>
-  <label for="logoText">Logo Text:</label>
-  <input type="text" id="logoText" placeholder="Enter logo text">
-  <button onclick="saveLogo()">Save Logo</button>
+    <h2>Edit Logo</h2>
+    <label for="logoText">Logo Text:</label>
+    <input type="text" id="logoText" placeholder="Enter logo text">
+    <button onclick="saveLogo()">Save Logo</button>
 
-  <h2>Edit Footer Note</h2>
-  <label for="footerNote">Footer Note:</label>
-  <input type="text" id="footerNote" placeholder="Enter footer note">
-  <button onclick="saveFooterNote()">Save Footer Note</button>
+    <h2>Edit Navigation Links</h2>
+    <div id="navLinksList"></div>
+    <h3>Add/Edit Navigation Link</h3>
+    <input type="text" id="navText" placeholder="Display Text">
+    <input type="text" id="navUrl" placeholder="URL">
+    <button onclick="addNavLink()">Add Link</button>
+    <button onclick="editNavLink()" id="editNavButton" style="display:none;">Save Edit</button>
+    <input type="hidden" id="editNavIndex">
 
-  <h2>Manage Social Media Links</h2>
-  <div id="socialLinksList"></div>
-  <h3>Add/Edit Social Media Link</h3>
-  <input type="text" id="socialText" placeholder="Display Text">
-  <input type="text" id="socialUrl" placeholder="URL">
-  <button onclick="addSocialLink()">Add Link</button>
-  <button onclick="editSocialLink()" id="editButton" style="display:none;">Save Edit</button>
-  <input type="hidden" id="editIndex">
+    <h2>Edit Articles</h2>
+    <h3>Article 1</h3>
+    <label for="article1Title">Title:</label>
+    <input type="text" id="article1Title" placeholder="Enter article title">
+    <label for="article1Text1">Text Paragraph 1:</label>
+    <textarea id="article1Text1" placeholder="Enter first paragraph"></textarea>
+    <label for="article1Text2">Text Paragraph 2:</label>
+    <textarea id="article1Text2" placeholder="Enter second paragraph"></textarea>
+    <label for="article1Image">Image URL:</label>
+    <input type="text" id="article1Image" placeholder="Enter image URL">
+    <button onclick="saveArticle(1)">Save Article 1</button>
 
-  <script src="script.js"></script>
+    <h3>Article 2</h3>
+    <label for="article2Title">Title:</label>
+    <input type="text" id="article2Title" placeholder="Enter article title">
+    <label for="article2Text1">Text Paragraph 1:</label>
+    <textarea id="article2Text1" placeholder="Enter first paragraph"></textarea>
+    <label for="article2Text2">Text Paragraph 2:</label>
+    <textarea id="article2Text2" placeholder="Enter second paragraph"></textarea>
+    <label for="article2Image">Image URL:</label>
+    <input type="text" id="article2Image" placeholder="Enter image URL">
+    <button onclick="saveArticle(2)">Save Article 2</button>
+
+    <h2>Edit Footer Company Details</h2>
+    <label for="footerCompanyTitle">Company Title:</label>
+    <input type="text" id="footerCompanyTitle" placeholder="Enter company title">
+    <label for="footerCompanyDesc">Description:</label>
+    <textarea id="footerCompanyDesc" placeholder="Enter company description"></textarea>
+    <label for="footerCopyright">Copyright:</label>
+    <input type="text" id="footerCopyright" placeholder="Enter copyright notice">
+    <button onclick="saveFooterContent()">Save Footer Content</button>
+
+    <h2>Edit Footer Navigation Links</h2>
+    <div id="footerNavLinksList"></div>
+    <h3>Add/Edit Footer Navigation Link</h3>
+    <input type="text" id="footerNavText" placeholder="Display Text">
+    <input type="text" id="footerNavUrl" placeholder="URL">
+    <button onclick="addFooterNavLink()">Add Link</button>
+    <button onclick="editFooterNavLink()" id="editFooterNavButton" style="display:none;">Save Edit</button>
+    <input type="hidden" id="editFooterNavIndex">
+
+    <h2>Manage Social Media Links</h2>
+    <div id="socialLinksList"></div>
+    <h3>Add/Edit Social Media Link</h3>
+    <input type="text" id="socialText" placeholder="Display Text">
+    <input type="text" id="socialUrl" placeholder="URL">
+    <button onclick="addSocialLink()">Add Link ➕</button>
+    <button onclick="editSocialLink()" id="editSocialButton" style="display:none;">Save Edit</button>
+    <input type="hidden" id="editSocialIndex">
+
+    <script src="script.js"></script>
+    <script>
+        // Load data for editing on admin page
+        window.onload = function() {
+            loadNavLinks();
+            loadArticles();
+            loadFooterContent();
+            loadSocialLinks();
+        };
+    </script>
 </body>
 </html>
