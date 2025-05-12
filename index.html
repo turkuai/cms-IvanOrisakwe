@@ -1,43 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IAI Website</title>
-    <link rel="stylesheet" href="wireframe.css">
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IAI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #f8f8f8;
+            border-bottom: 1px solid #ddd;
+        }
+        .header img {
+            height: 50px;
+        }
+        .nav {
+            display: flex;
+            gap: 20px;
+        }
+        .nav a {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
+        .content {
+            padding: 20px;
+        }
+        .article {
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        .article h2 {
+            margin-top: 0;
+        }
+        .article img {
+            width: 50%; /* Reduced to 50% of the container width */
+            height: 100px; /* Fixed height to control size */
+            object-fit: cover; /* Ensures the image fits nicely within the dimensions */
+            border-radius: 8px; /* Adds rounded corners for a softer look */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
+            border: 1px solid #f00; /* Re-added red border for debugging */
+        }
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #f8f8f8;
+            border-top: 1px solid #ddd;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .footer a {
+            text-decoration: none;
+            color: #000;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
     <div class="header">
-      <img id="site-logo" src="https://taito.edu.turku.fi/pluginfile.php/1/theme_mb2nl/logo/1729438228/tai_logo_300x150.png" alt="IAI Logo">
-      <div class="nav">
-        <a href="index.html">Home</a>
-        <a href="#">About</a>
-        <a href="#">Blog</a>
-        <a href="admin.html" class="admin-link">Admin</a>
-      </div>
+        <img src="https://taito.edu.turku.fi/pluginfile.php/1/theme_mb2nl/logo/1729438228/tai_logo_300x150.png" alt="IAI Logo">
+        <div class="nav">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Blog</a>
+        </div>
     </div>
-    
-    <div class="content" id="article-container">
-      <!-- Articles will be loaded from localStorage or defaults -->
+    <div class="content">
+        <div class="article">
+            <h2>A title for your first article</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <img src="https://preview.redd.it/nissan-skyline-gtr-r34-these-are-all-the-photos-wallpapers-v0-2ifr1pr92bue1.jpg?width=640&crop=smart&auto=webp&s=4e7c1f72224a895d4c81cf1340cffe0e0547df56" alt="Article Image">
+        </div>
+        <div class="article">
+            <h2>A title for your first article</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <img src="https://preview.redd.it/nissan-skyline-gtr-r34-these-are-all-the-photos-wallpapers-v0-2ifr1pr92bue1.jpg?width=640&crop=smart&auto=webp&s=4e7c1f72224a895d4c81cf1340cffe0e0547df56" alt="Article Image">
+        </div>
     </div>
-    
     <div class="footer">
-      <div id="company-name">Your company's name</div>
-      
-      <div>
-        <a href="index.html">Home</a>
-        <a href="#">About</a>
-        <a href="#">Blog</a>
-      </div>
-      
-      <div id="social-links">
-        <!-- Social links will be loaded from localStorage or defaults -->
-      </div>
-      
-      <div id="footer-note">© 2024, Company's name. All rights reserved.</div>
+        <div>Your company's name</div>
+        <div>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Blog</a>
+        </div>
+        <div>
+            <a href="#">Facebook</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">GitHub</a>
+        </div>
+        <div>© 2024, Company's name. All rights reserved.</div>
     </div>
-
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script src="script.js"></script>
-  </body>
+</body>
 </html>
