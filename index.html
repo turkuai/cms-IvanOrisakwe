@@ -9,11 +9,12 @@
 <body>
     <div>
         <nav>
-            <div class="logo">LOGO</div>
+            <div id="logo">My Website</div>
             <div class="nav-links">
                 <a href="#">Home</a>
                 <a href="#">About</a>
                 <a href="#">Blog</a>
+                <a href="/admin.html">Admin</a>
             </div>
         </nav>
         <main>
@@ -50,7 +51,7 @@
             <div class="footer-company">
                 <h3>Wireframe</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <p class="copyright">© 2024, Wireframe, All rights reserved.</p>
+                <p id="copyright">© 2024, Wireframe, All rights reserved.</p>
             </div>
             
             <div class="footer-links">
@@ -65,8 +66,20 @@
                     <a href="#">LinkedIn</a>
                     <a href="#">GitHub</a>
                 </div>
+
+                <div class="social-links">
+                    <ul id="socialLinks"></ul>
+                </div>
             </div>
         </footer>
     </div>
+    <script src="script.js"></script>
+    <script>
+            window.onload = function() {
+            loadLogo();
+            loadFooterNote();
+            loadSocialLinks();
+            };
+    </script>
 </body>
 </html>
