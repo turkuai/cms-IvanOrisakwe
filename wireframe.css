@@ -2,63 +2,47 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    padding-bottom: 100px; /* Space for footer */
-  }
-  
-  .header {
+}
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
     background-color: #f8f8f8;
     border-bottom: 1px solid #ddd;
-  }
-  
-  .header img {
+}
+.header img {
     height: 50px;
-  }
-  
-  .nav {
+}
+.nav {
     display: flex;
     gap: 20px;
-  }
-  
-  .nav a {
+}
+.nav a {
     text-decoration: none;
     color: #000;
     font-weight: bold;
-  }
-  
-  .admin-link {
-    color: #0066cc !important;
-  }
-  
-  .content {
+}
+.content {
     padding: 20px;
-    margin-bottom: 60px;
-  }
-  
-  .article {
+}
+.article {
     margin-bottom: 20px;
     border: 1px solid #ddd;
-    padding: 15px;
-    border-radius: 5px;
-  }
-  
-  .article h2 {
+    padding: 10px;
+}
+.article h2 {
     margin-top: 0;
-  }
-  
-  .article img {
-    width: 50%;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border: 1px solid #ddd;
-  }
-  
-  .footer {
+}
+.article img {
+    width: 50%; /* Reduced to 50% of the container width */
+    height: 100px; /* Fixed height to control size */
+    object-fit: cover; /* Ensures the image fits nicely within the dimensions */
+    border-radius: 8px; /* Adds rounded corners for a softer look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
+    border: 1px solid #f00; /* Re-added red border for debugging */
+}
+.footer {
     display: flex;
     justify-content: space-between;
     padding: 20px;
@@ -67,81 +51,9 @@ body {
     position: fixed;
     bottom: 0;
     width: 100%;
-    box-sizing: border-box;
-  }
-  
-  .footer a {
+}
+.footer a {
     text-decoration: none;
     color: #000;
     margin-right: 10px;
-  }
-  
-  /* Admin styles */
-  .admin-content {
-    padding: 20px;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  .admin-section {
-    margin-bottom: 30px;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
-  
-  .admin-input {
-    width: 100%;
-    padding: 8px;
-    margin: 5px 0 15px 0;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-  }
-  
-  button {
-    background-color: #0066cc;
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 4px;
-    cursor: pointer;
-    margin: 5px 0;
-  }
-  
-  button:hover {
-    background-color: #0055aa;
-  }
-  
-  .article-editor, .social-link-editor {
-    margin-bottom: 15px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-  }
-  
-  .delete-btn {
-    background-color: #cc0000;
-  }
-  
-  .delete-btn:hover {
-    background-color: #aa0000;
-  }
-  
-  textarea {
-    width: 100%;
-    min-height: 100px;
-    padding: 8px;
-    margin: 5px 0 15px 0;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-  }
-  
-  .success-message {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 4px;
-    display: none;
-  }
-  
+}
