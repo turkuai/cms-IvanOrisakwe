@@ -1,181 +1,412 @@
 /* wireframe.css */
 
 /* Shared Styles */
+:root {
+    --primary-color: #007bff; /* Main blue */
+    --primary-hover: #0056b3; /* Darker blue for hover */
+    --secondary-color: #28a745; /* Green for edit buttons */
+    --secondary-hover: #218838; /* Darker green */
+    --danger-color: #dc3545; /* Red for delete buttons */
+    --danger-hover: #c82333; /* Darker red */
+    --neutral-color: #6c757d; /* Gray for reset button */
+    --neutral-hover: #5a6268; /* Darker gray */
+    --background-light: #f8f9fa; /* Light background */
+    --border-color: #dee2e6; /* Light gray border */
+    --text-color: #212529; /* Dark text */
+    --text-muted: #6c757d; /* Muted text */
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f2f5;
-    color: #333;
+    background-color: var(--background-light);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.6;
 }
 
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 15px 30px;
     background-color: #fff;
-    border-bottom: 2px solid #007bff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-bottom: 3px solid var(--primary-color);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
 .header img {
-    height: 50px;
+    height: 60px;
+    transition: transform 0.3s ease;
+}
+
+.header img:hover {
+    transform: scale(1.05);
 }
 
 .nav {
     display: flex;
-    gap: 20px;
+    gap: 25px;
 }
 
 .nav a {
     text-decoration: none;
-    color: #007bff;
-    font-weight: bold;
-    transition: color 0.3s;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease, transform 0.2s ease;
 }
 
-.nav a:hover {
-    color: #0056b3;
+.nav a:hover,
+.nav a:focus {
+    color: var(--primary-hover);
+    transform: translateY(-1px);
+}
+
+.nav a:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
 }
 
 .content {
-    padding: 20px;
+    padding: 30px;
     max-width: 1200px;
     margin: 0 auto;
+    flex: 1;
 }
 
 .article {
-    margin-bottom: 20px;
-    padding: 15px;
+    margin-bottom: 30px;
+    padding: 20px;
     background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.article:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 }
 
 .article h2 {
-    margin-top: 0;
-    color: #007bff;
+    margin: 0 0 10px;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.article p {
+    margin: 0 0 15px;
+    color: var(--text-color);
 }
 
 .article img {
-    width: 50%;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-top: 10px;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 15px;
 }
 
 .footer {
     display: flex;
     justify-content: space-between;
-    padding: 20px;
+    align-items: center;
+    padding: 25px 30px;
     background-color: #fff;
-    border-top: 2px solid #007bff;
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    border-top: 3px solid var(--primary-color);
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.05);
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer > div {
+    flex: 1;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .footer a {
     text-decoration: none;
-    color: #007bff;
-    margin-right: 10px;
-    transition: color 0.3s;
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-bottom: 8px;
+    transition: color 0.3s ease;
 }
 
-.footer a:hover {
-    color: #0056b3;
+.footer a:hover,
+.footer a:focus {
+    color: var(--primary-hover);
+}
+
+.footer a:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
 }
 
 .social-links {
     display: flex;
-    gap: 10px;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.social-link-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.social-link-item a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.social-link-item a:hover,
+.social-link-item a:focus {
+    color: var(--primary-hover);
+}
+
+.social-link-item a:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+#footer-note {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+#footer-note:hover,
+#footer-note:focus {
+    color: var(--text-color);
+    cursor: pointer;
 }
 
 /* Admin-Specific Styles */
 .admin-body .article {
     position: relative;
+    padding-bottom: 60px; /* Space for buttons */
 }
 
 .edit-btn {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    padding: 5px 10px;
-    background-color: #28a745;
+    top: 15px;
+    right: 15px;
+    padding: 8px 16px;
+    background-color: var(--secondary-color);
     color: #fff;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.edit-btn:hover {
-    background-color: #218838;
+.edit-btn:hover,
+.edit-btn:focus {
+    background-color: var(--secondary-hover);
+    transform: translateY(-1px);
+}
+
+.edit-btn:focus {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 2px;
 }
 
 .editable-field {
-    border: 1px dashed #007bff;
-    padding: 5px;
-    background-color: #f8f9fa;
-    border-radius: 4px;
+    border: 1px dashed var(--primary-color);
+    padding: 8px;
+    background-color: var(--background-light);
+    border-radius: 6px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.editable-field:hover {
+.editable-field:hover,
+.editable-field:focus {
     background-color: #e9ecef;
 }
 
+.editable-field:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
 .edit-form {
-    margin-top: 10px;
-    display: none;
+    margin-top: 15px;
+    padding: 15px;
+    background-color: var(--background-light);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
 }
 
 .edit-form input,
-.edit-form textarea,
-.edit-form select {
+.edit-form textarea {
     width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1rem;
+    color: var(--text-color);
+    background-color: #fff;
+}
+
+.edit-form textarea {
+    min-height: 120px;
+    resize: vertical;
 }
 
 .edit-form button {
-    padding: 8px 15px;
-    background-color: #007bff;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
     color: #fff;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.edit-form button:hover {
-    background-color: #0056b3;
+.edit-form button:hover,
+.edit-form button:focus {
+    background-color: var(--primary-hover);
+    transform: translateY(-1px);
 }
 
-.social-link-item {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 10px;
-    align-items: center;
+.edit-form button:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
 }
 
 .social-link-item button {
-    background-color: #dc3545;
+    padding: 8px 16px;
+    background-color: var(--danger-color);
     color: #fff;
     border: none;
-    border-radius: 4px;
-    padding: 5px 10px;
+    border-radius: 6px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.social-link-item button:hover {
-    background-color: #c82333;
+.social-link-item button:hover,
+.social-link-item button:focus {
+    background-color: var(--danger-hover);
+    transform: translateY(-1px);
+}
+
+.social-link-item button:focus {
+    outline: 2px solid var(--danger-color);
+    outline-offset: 2px;
+}
+
+/* Reset Button in Admin */
+.footer button {
+    padding: 10px 20px;
+    background-color: var(--neutral-color);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.footer button:hover,
+.footer button:focus {
+    background-color: var(--neutral-hover);
+    transform: translateY(-1px);
+}
+
+.footer button:focus {
+    outline: 2px solid var(--neutral-color);
+    outline-offset: 2px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
+
+    .nav {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 15px;
+    }
+
+    .content {
+        padding: 15px;
+    }
+
+    .article {
+        padding: 15px;
+    }
+
+    .article img {
+        width: 100%;
+        max-width: none;
+    }
+
+    .footer {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .footer > div {
+        min-width: 100%;
+    }
+
+    .edit-btn {
+        position: static;
+        margin-top: 10px;
+        width: auto;
+    }
+
+    .edit-form {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header img {
+        height: 50px;
+    }
+
+    .nav a {
+        font-size: 0.9rem;
+    }
+
+    .article h2 {
+        font-size: 1.3rem;
+    }
+
+    .edit-form input,
+    .edit-form textarea,
+    .edit-form button,
+    .social-link-item button,
+    .footer button {
+        font-size: 0.9rem;
+    }
 }
