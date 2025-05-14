@@ -1,0 +1,28 @@
+name: 🚀 Deploy website to CMS folder
+on:
+  push:
+    branches:
+      - server  
+
+jobs:
+  web-deploy:
+    name: 🎉 Deploy to FTP
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v4
+
+      - name: 📂 Sync files to CMS folder
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: taikukkula.fi 
+          username: ${{ secrets.FTP_USERNAME }} 
+          password: ${{ secrets.FTP_PASSWORD }} 
+          server-dir: /cms/  
+          protocol: ftp  
+          port: 21  
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github/**
+            **/node_modules/**
